@@ -131,6 +131,14 @@ for(var i = 0; i < numberOfWorkplaces; i ++){
             
         } }
 
+//if one student and 1 college
+
+if(infected == 1 && offices.length == 1){
+    community[0].isInfected = true;
+    community[0].hasJob = true;
+    community[0].daysPassedAfterInfected = 6;
+}
+else {
     //infect first humans
     
 for(var i = 0; i < infected; i++){
@@ -141,7 +149,7 @@ for(var i = 0; i < infected; i++){
         
     } 
 
-}
+}}
     //give jobs to people
 numOfPeopleWithJobs = numberOfPopulation * peopleGoToWork;
 for(var i = 0; i < numOfPeopleWithJobs; i++){
@@ -150,6 +158,7 @@ for(var i = 0; i < numOfPeopleWithJobs; i++){
     else i--;
 }
 
+
     //give awarness to people
     var peopleTakingSafetyMeasures = numberOfPopulation * takingSafetyMeasures;
     for(var i = 0; i < peopleTakingSafetyMeasures; i++){
@@ -157,6 +166,7 @@ for(var i = 0; i < numOfPeopleWithJobs; i++){
         if(!community[temp].safetyMeasures) community[temp].safetyMeasures = true;
         else i--;
     }
+
 
 }
 
