@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virus spread simulation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        canvas{
+            border: 1px solid black;
+            margin: 1em;
+        }
+        .arguments{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            
+        }
+        .argument{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <div class="arguments">
+
+        <div class="argument">
+            <p>Broj dana: <span id="daysPassed">0</span></p>
+        </div>
+
+        <div class="argument">
+            <p>Ukupan broj oboljelih: <span id="collectiveInfectionNumber">0</span></p>
+        </div>
+        <div class="argument">
+            <p>Ukupan broj trenutno oboljelih: <span id="currentInfectionNumber">0</span></p>
+        </div>
+        <div class="argument">
+            <p>Ukupan broj zdravih: <span id="healthyNumber">0</span></p>
+        </div>
+        <div class="argument">
+            <p>Ukupan broj imunih: <span id="immuneNumber">0</span></p>
+        </div>
+
+        <div class="argument">
+            <button onclick="startStop()" id="startButton">Zapocni simulaciju</button>
+        </div>
+
+        <div class="argument">
+        <button onClick="window.location.reload();">Zapocni novu simulaciju</button>
+        </div>
+
+        <div class="argument">
+            <label for="">Broj populacije</label>
+            <input type="text" name="" id="numberOfPopulation" value="200">
+        </div>
+
+        <div class="argument">
+            <label for="">Brzina</label>
+            <input type="text" name="" id="speed" value = '1'>
+        </div>
+
+        <div class="argument">
+            <label for="">Pocetni broj zarazenih</label>
+            <input type="text" name="" id="initialInfected" value = '10'>
+        </div>
+
+        <div class="argument">
+            <label for="">Distanca na kojoj je moguc prenos infekcije</label>
+            <input type="text" name="" id="areaOfInfection" value="1">
+        </div>
+
+        <div class="argument">
+            <label for="">Sansa za zarazu u %</label>
+            <input type="text" name="" id="infectionChance" value="2.5">
+        </div>
+
+        <div class="argument">
+            <label for="">Broj zaposlenih u %</label>
+            <input type="text" name="" id="peopleGoToWork" value="38">
+        </div>
+
+        <div class="argument">
+            <label for="">Broj kuca</label>
+            <input type="text" name="" id="numberOfHomes" value="50">
+        </div>
+
+        <div class="argument">
+            <label for="">Broj radnih mjesta</label>
+            <input type="text" name="" id="numberOfWorkplaces" value="12">
+        </div>
+
+        <div class="argument">
+            <label for="">Broj imunih ljudi</label>
+            <input type="text" name="" id="numberOfImmune" value="5">
+        </div>
+
+        <div class="argument">
+            <label for="">% koji se drzi mjera opreza</label>
+            <input type="text" name="" id="takingSafetyMeasures" value="50">
+        </div>
+
+        <div class="argument">
+            <label for="">Samoizolacija</label>
+            <input type="checkbox" name="" id="isolation">
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
