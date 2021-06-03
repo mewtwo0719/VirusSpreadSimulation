@@ -137,6 +137,7 @@ for(var i = 0; i < infected; i++){
     var temp = Math.round(Math.random() * (community.length-1))
     if(!community[temp].isInfected ){
         community[temp].isInfected = true;
+        community[temp].daysPassedAfterInfected = 5;
         
     } 
 
@@ -284,7 +285,7 @@ function Person(x, y, des1x, des1y, des2x, des2y){
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.r, 0, Math.PI*2, false);
         ctx.fillStyle = this.isInfected ? infectedColor : healthyColor;
-        if(this.isInfected && daysPassed <= 5) ctx.fillStyle = notYetAbleToInfect;
+        if(this.isInfected && this.daysPassedAfterInfected <= isolationDays) ctx.fillStyle = notYetAbleToInfect;
         if(this.isImmune) ctx.fillStyle = immuneColor;
         
         ctx.fill();
